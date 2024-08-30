@@ -1,0 +1,13 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "learning docker",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "repository": "https://github.com/Leonardo3737/learning-docker.git",
+  "type": "module",
+  "author": "Leonardo Vinicius",
+  "license": "MIT"
+}
