@@ -9,5 +9,8 @@
   "repository": "https://github.com/Leonardo3737/learning-docker.git",
   "type": "module",
   "author": "Leonardo Vinicius",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }

@@ -1,11 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <title>User</title>
+  <style>
+    * {
+      font-family: "Roboto", sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    a {
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: black;
+      border: none;
+      background-color: cornflowerblue;
+      border-radius: 5px;
+      padding: 8px 15px;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 1000px;
+    }
+
+    td,
+    th {
+      border: 1px solid #b8b8b8;
+      text-align: left;
+      padding: 8px;
+    }
+
+    td div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Learning Docker</h1>
+  <h1>Usuarios</h1>
+  <a href="criar">Criar Usuario</a>
+
+  <table id="table">
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Ações</th>
+    </tr>
+  </table>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
