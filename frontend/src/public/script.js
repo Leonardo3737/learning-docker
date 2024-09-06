@@ -22,24 +22,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function loadData() {
-  const res = await fetch('http://localhost:5050/users');
-  if (!res.ok) {
-    throw new Error('Network response was not ok');
+  try{
+    const res = await fetch('http://localhost:5050/users');
+    if (!res.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const users = await res.json();
+    console.log(users);
+  
+    const table = document.getElementById('table');
+    table.innerHTML = `
+    <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+      </tr>`;
+    users.forEach(user => {
+      table.innerHTML += newRow(user);
+    });
   }
-  const users = await res.json();
-  console.log(users);
-
-  const table = document.getElementById('table');
-  table.innerHTML = `
-  <tr>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Telefone</th>
-      <th>Ações</th>
-    </tr>`;
-  users.forEach(user => {
-    table.innerHTML += newRow(user);
-  });
+  catch(err) {
+    console.log('erro: ', err.message);
+  }
 }
 
 async function deleteUser(id) {

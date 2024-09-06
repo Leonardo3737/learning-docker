@@ -6,6 +6,9 @@ COPY package.json .
 RUN yarn
 COPY . .
 
-CMD ["yarn", "start"]
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+CMD ["entrypoint.sh"]
 
 EXPOSE 5050

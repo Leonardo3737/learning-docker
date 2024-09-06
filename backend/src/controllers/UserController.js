@@ -19,7 +19,7 @@ export class UserController {
         res.status(200).send(await userService.findById(id))
       }
       catch(err) {
-        res.status(500).send('Error: ', err.message)
+        res.status(500).send('Error: ' + err.message)
       }
     })
 
@@ -30,7 +30,7 @@ export class UserController {
         res.status(201).send("criado com sucesso")
       }
       catch(err) {
-        res.status(500).send('Error: ', err.message)
+        res.status(500).send('Error: ' + err.message)
       }
     })
 
@@ -48,7 +48,7 @@ export class UserController {
         res.status(200).send("atualizado com sucesso")
       }
       catch(err) {
-        res.status(500).send('Error: ', err.message)
+        res.status(500).send('Error: ' + err.message)
       }
     })
 

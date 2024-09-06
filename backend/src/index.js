@@ -12,13 +12,17 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-try {
-  dbConnectionTest()
-  SyncModels([User])
+async function testDb() {
+  try {
+    await dbConnectionTest()
+    SyncModels([User])
+  }
+  catch (err) {
+    console.log("erro ao conectar banco de dados: ", err);
+  }
 }
-catch (err) {
-  console.log("erro ao conectar banco de dados: ", err);
-}
+
+testDb()
 
 const userService = new UserService(User)
 new UserController(app, userService)
